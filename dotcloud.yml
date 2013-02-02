@@ -1,3 +1,5 @@
 www:
   type: ruby
   approot: hackerdeck
+db:
+  type: mysql

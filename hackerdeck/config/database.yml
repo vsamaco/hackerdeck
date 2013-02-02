@@ -19,7 +19,13 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  # adapter: sqlite3
+  # database: db/production.sqlite3
+  adapter: mysql2
+  database: hackerdeck
+  username: root
+  password: UDe5lfwMYaX8sOpxOhoJ
+  host: hackerdeck-jimmyhwang.azva.dotcloud.net
+  port: 48621
   pool: 5
   timeout: 5000
