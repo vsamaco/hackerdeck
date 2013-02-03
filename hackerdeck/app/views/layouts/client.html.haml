@@ -7,5 +7,8 @@
     = csrf_meta_tags
 
   %body
-    %div.container.hero
-      = yield
+    #navigation-container.navbar.navbar-inverse.navbar-fixed-top
+
+    %div.container.outer-container
+      #page-container.page-container
+        = yield
