@@ -1,6 +1,6 @@
-Hackerdeck.Views.TeamMetaView = Backbone.View.extend({
-  id: 'team-meta-view',
-  template: JST['team_meta_view'],
+Hackerdeck.Views.SlideCountdownView = Backbone.View.extend({
+  id: 'countdown-view',
+  template: JST['slide_countdown_view'],
 
   getRenderData: function() {},
 
