@@ -4,6 +4,7 @@ Hackerdeck.Views.TeamMetaView = Backbone.View.extend({
 
   initialize: function() {
     this.collection.on('reset', this.render, this);
+    this.model.on('reset', this.render, this);
   },
 
   getRenderData: function() {},
@@ -15,10 +16,16 @@ Hackerdeck.Views.TeamMetaView = Backbone.View.extend({
   },
 
   afterRender: function() {
-    var current_team_index = this.model.get('current_team');
-    var current_team = this.collection.at(current_team_index);
-    this.$('.team-name').html(current_team.get('name'));
-    this.$('.team-index').html(current_team_index + 1);
-    this.$('.team-description').html(current_team.get('description'));
+      var current_team_index = this.model.get('current_team');
+      var current_team = this.collection.at(current_team_index);
+    if (current_team) {
+      this.$('.team-name').html(current_team.get('name'));
+      this.$('.team-index').html(current_team_index + 1);
+      this.$('.team-description').html(current_team.get('description'));
+    } else {
+      this.$('.team-name').html('---');
+      this.$('.team-index').html('');
+      this.$('.team-description').html('');
+    }
   }
 });

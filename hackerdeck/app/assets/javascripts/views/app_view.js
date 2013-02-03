@@ -6,10 +6,11 @@ Hackerdeck.Views.AppView = Backbone.View.extend({
     this.slideView = new Hackerdeck.Views.SlideView({model: this.model});
     this.sidebarView = new Hackerdeck.Views.SidebarView({model: this.model, collection: this.collection});
     this.teamMetaView = new Hackerdeck.Views.TeamMetaView({model: this.model, collection: this.collection});
+
+    this.model.on('change:name', this.render, this);
   },
 
   getRenderData: function() {
-    console.log(this.model.toJSON());
     return {
       event: this.model.toJSON()
     }

@@ -29,6 +29,6 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   addTeam: function(team) {
     console.log('add team:' + team.get('name'));
-    this.$('.team-list').html('<li>' + team.get('name') + '</li>');
+    this.$('.team-list').append('<li>' + team.get('name') + '</li>');
   }
 });
