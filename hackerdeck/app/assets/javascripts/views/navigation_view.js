@@ -6,9 +6,6 @@ Hackerdeck.Views.NavigationView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.getRenderData()));
-    this.afterRender();
     return this;
-  },
-
-  afterRender: function() {}
+  }
 });
