@@ -28,7 +28,8 @@ window.Hackerdeck = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Hackerdeck.Routers.App();
+    Backbone.history.start();
   }
 }
 
