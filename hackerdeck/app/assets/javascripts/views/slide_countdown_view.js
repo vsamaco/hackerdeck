@@ -13,6 +13,6 @@ Hackerdeck.Views.SlideCountdownView = Backbone.View.extend({
   },
 
   afterRender: function() {
-    this.$('.time').countdown({until: "+3m", layout: "<span class='minutes'>{mnn}</span>:<span class='seconds'>{snn}</span> "});
+    this.$('.time').countdown({until: this.model.get('time'), layout: "<span class='minutes'>{mnn}</span>:<span class='seconds'>{snn}</span> "});
   }
 });

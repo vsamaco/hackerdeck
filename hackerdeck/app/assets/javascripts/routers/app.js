@@ -5,11 +5,15 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
 
   home: function() {
     console.log('route home');
+    offset_time = new Date();
+    offset_time.setMinutes(offset_time.getMinutes() + 3);
+    console.log(offset_time);
+
     var event = new Hackerdeck.Models.Event({
       name: 'Hackathon Developer Week',
       current_slide: 0,
       status: 'stop',
-      time: new Date() + 1000
+      time: offset_time,
     });
 
     var appView = new Hackerdeck.Views.AppView({model: event});
