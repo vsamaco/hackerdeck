@@ -5,6 +5,7 @@ Hackerdeck.Views.AppView = Backbone.View.extend({
   initialize: function() {
     this.slideView = new Hackerdeck.Views.SlideView();
     this.sidebarView = new Hackerdeck.Views.SidebarView();
+    this.teamMetaView = new Hackerdeck.Views.TeamMetaView();
   },
 
   getRenderData: function() {},
@@ -19,5 +20,6 @@ Hackerdeck.Views.AppView = Backbone.View.extend({
     console.log('after render');
     this.$('#slide-container').html(this.slideView.render().el);
     this.$('#sidebar-container').html(this.sidebarView.render().el);
+    this.$('#team-meta-container').html(this.teamMetaView.render().el);
   }
 });
