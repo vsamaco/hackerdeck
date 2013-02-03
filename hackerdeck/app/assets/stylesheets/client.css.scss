@@ -1,3 +1,29 @@
 // Place all the styles related to the client controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap_and_overrides";
+
+body {
+  padding-top: 60px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+#slide {
+  position: relative;
+
+  #countdown-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  #image-container {
+    height: 400px;
+  }
+}
+
