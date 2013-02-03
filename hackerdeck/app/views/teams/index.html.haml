@@ -1,26 +1,23 @@
-%h1 Listing teams
+%h1 Hackathon Teams
 
 %table.table.table-hover
   %tr
-    %th Event Name
     %th Name
     %th Description
     %th Members
-    %th Image url
     %th
+    %th Event Name
     %th
     %th
 
   - @teams.each do |team|
     %tr
-      %td= team.event.name
-      %td= team.name
+      %td= link_to team.name, team_path(team)
       %td= team.description
       %td= team.members
-      %td= team.image_url
-      %td= link_to 'Show', team
+      %td= link_to image_tag(team.image_url), team_path(team)
+      %td= team.event.name
       %td= link_to 'Edit', edit_team_path(team)
-      %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

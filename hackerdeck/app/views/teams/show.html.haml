@@ -11,7 +11,7 @@
   = @team.members
 %p
   %b Image url:
-  = @team.image_url
+  = image_tag(@team.image_url)
 
 = link_to 'Edit', edit_team_path(@team)
 \|
