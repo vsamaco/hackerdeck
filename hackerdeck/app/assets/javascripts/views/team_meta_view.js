@@ -15,8 +15,10 @@ Hackerdeck.Views.TeamMetaView = Backbone.View.extend({
   },
 
   afterRender: function() {
-    var current_team = this.model.get('current_team');
-    this.$('.title').html(this.collection.at(current_team).get('name'));
-    this.$('.team-index').html(current_team + 1);
+    var current_team_index = this.model.get('current_team');
+    var current_team = this.collection.at(current_team_index);
+    this.$('.team-name').html(current_team.get('name'));
+    this.$('.team-index').html(current_team_index + 1);
+    this.$('.team-description').html(current_team.get('description'));
   }
 });
