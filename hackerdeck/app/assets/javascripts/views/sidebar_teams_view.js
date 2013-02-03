@@ -4,6 +4,7 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   initialize: function() {
     this.collection.on('reset', this.render, this);
+    this.collection.on('change', this.render, this);
   },
 
   getRenderData: function() {
@@ -14,12 +15,12 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.getRenderData()));
-    //this.afterRender();
+    this.afterRender();
     return this;
   },
 
   afterRender: function() {
-    //this.$('.team-list').html('AFTER');
+    this.addTeams();
   },
 
   addTeams: function() {
@@ -28,7 +29,6 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
   },
 
   addTeam: function(team) {
-    console.log('add team:' + team.get('name'));
     this.$('.team-list').append('<li>' + team.get('name') + '</li>');
   }
 });
