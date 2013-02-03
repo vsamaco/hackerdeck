@@ -1,3 +1,6 @@
   <b>HACK LIST</b>
-  <ul class="nav nav-stacked nav-tabs">
+  <ul class="nav nav-stacked nav-tabs team-list">
+    <% teams.forEach(function(team) { %>
+      <li><%= team.name %></li>
+    <% }) %>
   </ul>
