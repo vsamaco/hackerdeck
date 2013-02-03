@@ -3,7 +3,7 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
   template: JST['slide_view'],
 
   initialize: function() {
-    this.countdown = new Hackerdeck.Views.SlideCountdownView();
+    this.countdown = new Hackerdeck.Views.SlideCountdownView({model: this.model});
   },
 
   getRenderData: function() {},

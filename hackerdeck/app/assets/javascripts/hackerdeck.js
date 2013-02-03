@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require hackerdeck
+//= require jquery.countdown.min
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

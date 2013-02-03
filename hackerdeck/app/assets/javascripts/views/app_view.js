@@ -3,7 +3,7 @@ Hackerdeck.Views.AppView = Backbone.View.extend({
   template: JST['app_view'],
 
   initialize: function() {
-    this.slideView = new Hackerdeck.Views.SlideView();
+    this.slideView = new Hackerdeck.Views.SlideView({model: this.model});
     this.sidebarView = new Hackerdeck.Views.SidebarView();
     this.teamMetaView = new Hackerdeck.Views.TeamMetaView();
   },
