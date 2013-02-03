@@ -7,16 +7,16 @@
           %li= msg
 
   .field
-    = f.label :name
+    = f.label "Event Name"
     = f.text_field :name
   .field
-    = f.label :current_team
+    = f.label "Current Team Number (starting with 0 as the first team)"
     = f.text_field :current_team
   .field
-    = f.label :status
+    = f.label "Status: start OR stop"
     = f.text_field :status
   .field
-    = f.label :time
+    = f.label "Time in seconds to be shown on client"
     = f.text_field :time
   .actions
     = f.submit 'Save'
