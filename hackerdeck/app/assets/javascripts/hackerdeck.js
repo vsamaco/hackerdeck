@@ -12,3 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require hackerdeck
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
+//= require_tree .
+
+window.Hackerdeck = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  initialize: function() {
+    alert('Hello from Backbone!');
+  }
+}
+
+$(document).ready(function() {
+  Hackerdeck.initialize();
+});
+

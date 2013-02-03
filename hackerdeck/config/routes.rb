@@ -1,4 +1,6 @@
 Hackerdeck::Application.routes.draw do
+  get "client/index"
+
   resources :events do
     resources :teams
   end
