@@ -23,3 +23,12 @@ body {
   }
 }
 
+.team-list {
+  li {
+    padding: 3px 2px;
+
+    .badge {
+      margin-right: 5px;
+    }
+  }
+}
