@@ -15,7 +15,7 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
     //   status: 'stop',
     //   time: offset_time,
     // });
-    this.event_id = 1;
+    this.event_id = window.event_id;
 
     this.event_model = new Hackerdeck.Models.Event({event_id: this.event_id});
 

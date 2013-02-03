@@ -1,5 +1,6 @@
 Hackerdeck::Application.routes.draw do
-  get "client/index"
+  get "client/index" => "client#index"
+  get "client/index/:event_id" => "client#index", :as => 'client_index_event'
 
   resources :events do
     resources :teams
