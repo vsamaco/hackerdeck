@@ -11,12 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202205915) do
+ActiveRecord::Schema.define(:version => 20130202235552) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "current_team"
+    t.string   "status"
+    t.integer  "time"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "members"
+    t.string   "image_url"
+    t.integer  "event_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
