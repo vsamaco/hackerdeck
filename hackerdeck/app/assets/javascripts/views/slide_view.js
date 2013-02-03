@@ -11,7 +11,6 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
   getRenderData: function() {
     var current_team_index = this.model.get('current_team');
     var current_team = this.collection.at(current_team_index);
-    console.log(current_team);
     return {
       team: current_team ? current_team.toJSON() : ''
     }
@@ -28,7 +27,7 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
     var current_team = this.collection.at(current_team_index);
 
     this.$("#countdown-container").html(this.countdown.render().el);
-    if(current_team_index) {
+    if(current_team && current_team.get('image_url')) {
       this.$('#image-container').html('<img src="'+ current_team.get('image_url') +'" class="img-rounded" style="max-width:100%;display:block;max-height:100%;margin:0 auto;"/>');
     } else {
 

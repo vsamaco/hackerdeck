@@ -15,15 +15,16 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
     //   status: 'stop',
     //   time: offset_time,
     // });
+    this.event_id = 1;
 
-    this.event_model = new Hackerdeck.Models.Event();
+    this.event_model = new Hackerdeck.Models.Event({event_id: this.event_id});
 
     //this.teams = new Hackerdeck.Collections.Teams([
     //   {name: 'team 1', description: 'description 1', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
     //   {name: 'team 2', description: 'description 2', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
     //   {name: 'team 3', description: 'description 3', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
     // ]);
-    this.teams = new Hackerdeck.Collections.Teams();
+    this.teams = new Hackerdeck.Collections.Teams({event_id: this.event_id});
 
     this.updateData();
     setInterval(function() { 
