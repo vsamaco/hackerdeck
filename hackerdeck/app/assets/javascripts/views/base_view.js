@@ -1,4 +1,4 @@
-Hackerdeck.Views.Base.View = Backbone.View.extend({
+Hackerdeck.Views.BaseView = Backbone.View.extend({
   initialize: function() {
     this.render = _.bind(this.render, this);
   },
