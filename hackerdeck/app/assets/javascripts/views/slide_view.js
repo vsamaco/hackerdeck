@@ -6,7 +6,7 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
     this.countdown = new Hackerdeck.Views.SlideCountdownView({model: this.model});
     //this.model.on('change', this.render, this);
     this.collection.on('reset', this.renderSlide, this);
-    this.collection.on('reset', this.test, this);
+    //this.collection.on('reset', this.test, this);
   },
 
   getRenderData: function() {
