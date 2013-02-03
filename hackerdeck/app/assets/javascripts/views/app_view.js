@@ -8,7 +8,13 @@ Hackerdeck.Views.AppView = Backbone.View.extend({
     this.teamMetaView = new Hackerdeck.Views.TeamMetaView();
   },
 
-  getRenderData: function() {},
+  getRenderData: function() {
+    console.log(this.model.toJSON());
+    console.log(new Date(this.model.get('time')).toTimeString());
+    return {
+      event: this.model.toJSON()
+    }
+  },
 
   render: function() {
     this.$el.html(this.template(this.getRenderData()));
