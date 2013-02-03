@@ -4,8 +4,9 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
 
   initialize: function() {
     this.countdown = new Hackerdeck.Views.SlideCountdownView({model: this.model});
-    this.model.on('change', this.render, this);
-    this.collection.on('reset', this.render, this);
+    //this.model.on('change', this.render, this);
+    this.collection.on('reset', this.renderSlide, this);
+    this.collection.on('reset', this.test, this);
   },
 
   getRenderData: function() {
@@ -23,14 +24,19 @@ Hackerdeck.Views.SlideView = Backbone.View.extend({
   },
 
   afterRender: function() {
+    this.$("#countdown-container").html(this.countdown.render().el);
+  },
+
+  renderSlide: function() {
     var current_team_index = this.model.get('current_team');
     var current_team = this.collection.at(current_team_index);
 
-    this.$("#countdown-container").html(this.countdown.render().el);
     if(current_team && current_team.get('image_url')) {
       this.$('#image-container').html('<img src="'+ current_team.get('image_url') +'" class="img-rounded" style="max-width:100%;display:block;max-height:100%;margin:0 auto;"/>');
-    } else {
-
     }
+  },
+
+  test: function() {
+    console.log('test call');
   }
 });
