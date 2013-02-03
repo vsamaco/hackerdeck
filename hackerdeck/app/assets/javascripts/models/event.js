@@ -1,3 +1,3 @@
-HackerDeck.Models.Event = Backbone.Model.extend({
+Hackerdeck.Models.Event = Backbone.Model.extend({
   url: '/events'
 });

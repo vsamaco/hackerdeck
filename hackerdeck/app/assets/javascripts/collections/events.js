@@ -1,4 +1,4 @@
-HackerDeck.Collections.Event = Backbone.Collection.extend({
-  model: HackerDeck.Models.Event,
+Hackerdeck.Collections.Event = Backbone.Collection.extend({
+  model: Hackerdeck.Models.Event,
   url: '/events',
 });

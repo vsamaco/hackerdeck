@@ -1,3 +1,3 @@
-HackerDeck.Models.Team = Backbone.Model.extend({
+Hackerdeck.Models.Team = Backbone.Model.extend({
   url: '/teams'
 });
