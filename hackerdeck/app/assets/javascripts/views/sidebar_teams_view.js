@@ -4,7 +4,7 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   initialize: function() {
     this.collection.on('reset', this.render, this);
-    this.collection.on('change', this.render, this);
+    this.model.on('change:current_team', this.render, this);
   },
 
   getRenderData: function() {
@@ -25,10 +25,12 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   addTeams: function() {
     this.$('.team-list').empty();
-    this.collection.forEach(this.addTeam);
+    this.collection.forEach(this.addTeam, this);
   },
 
-  addTeam: function(team) {
-    this.$('.team-list').append('<li>' + team.get('name') + '</li>');
+  addTeam: function(team, index) {
+    var current_badge = index == this.model.get('current_team') ? 'badge badge-success' : 'badge'
+    var index_badge = '<span class="'+ current_badge +'">' + (index + 1) + '</span>';
+    this.$('.team-list').append('<li>' + index_badge + team.get('name') + '</li>');
   }
 });
