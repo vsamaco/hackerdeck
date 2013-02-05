@@ -9,17 +9,17 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
     offset_time.setMinutes(offset_time.getMinutes() + 3);
     console.log(offset_time.getTime());
 
-    // this.event = new Hackerdeck.Models.Event({
+    this.event_id = window.event_id;
+    // window.event_model = new Hackerdeck.Models.Event({
     //   name: 'Hackathon Developer Week',
     //   current_team: 0,
     //   status: 'stop',
-    //   time: offset_time,
+    //   time: 360,
+    //   event_id: this.event_id
     // });
-    this.event_id = window.event_id;
-
     window.event_model = new Hackerdeck.Models.Event({event_id: this.event_id});
 
-    //this.teams = new Hackerdeck.Collections.Teams([
+    // this.teams = new Hackerdeck.Collections.Teams([
     //   {name: 'team 1', description: 'description 1', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
     //   {name: 'team 2', description: 'description 2', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
     //   {name: 'team 3', description: 'description 3', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
