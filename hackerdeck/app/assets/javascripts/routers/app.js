@@ -17,7 +17,7 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
     // });
     this.event_id = window.event_id;
 
-    this.event_model = new Hackerdeck.Models.Event({event_id: this.event_id});
+    window.event_model = new Hackerdeck.Models.Event({event_id: this.event_id});
 
     //this.teams = new Hackerdeck.Collections.Teams([
     //   {name: 'team 1', description: 'description 1', image_url: 'http://i.imgur.com/oCP7Pom.jpg'},
@@ -33,7 +33,7 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
 
     //console.log(teams);
 
-    var appView = new Hackerdeck.Views.AppView({model: this.event_model, collection: this.teams});
+    var appView = new Hackerdeck.Views.AppView({model: window.event_model, collection: this.teams});
     var navigationView = new Hackerdeck.Views.NavigationView();
     $('#navigation-container').html(navigationView.render().el);
     $('#page-container').html(appView.render().el);
@@ -41,7 +41,7 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
 
   updateData: function() {
     console.log('updating data');
-    this.event_model.fetch();
+    window.event_model.fetch();
     this.teams.fetch();
   }
 });
