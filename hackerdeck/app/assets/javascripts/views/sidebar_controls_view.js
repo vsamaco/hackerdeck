@@ -24,17 +24,17 @@ Hackerdeck.Views.SidebarControlsView = Backbone.View.extend({
 
   startTimer: function() {
     console.log('start timer');
-    this.model.set('status', 'start');
+    this.model.startTimer();
   },
 
   pauseTimer: function() {
     console.log('pause timer');
-    this.model.set('status', 'stop');
+    this.model.stopTimer();
   },
 
   stopTimer: function() {
     console.log('stop timer');
-    this.model.set('status', 'stop');
+    this.model.stopTimer();
   },
 
   nextTeam: function() {
