@@ -4,7 +4,8 @@ Hackerdeck.Views.SlideCountdownView = Backbone.View.extend({
 
   initialize: function() {
     //this.model.on('reset', this.render, this);
-    this.model.on('change', this.updateTimer, this);
+    this.model.on('change:time', this.renderTimer, this);
+    this.model.on('change:status', this.updateTimer, this);
   },
 
   getRenderData: function() {
@@ -18,12 +19,18 @@ Hackerdeck.Views.SlideCountdownView = Backbone.View.extend({
   },
 
   afterRender: function() {
+    this.renderTimer();
+  },
+
+  renderTimer: function() {
+    console.log('render timer:' + this.model.get('time'));
     var layout = "<span class='minutes'>{mnn}</span>:<span class='seconds'>{snn}</span>";
 
-    this.$('.time').countdown({until: this.model.get('time'), layout: layout});
+    this.$('.time').countdown('destroy').countdown({until: this.model.get('time'), layout: layout});
   },
 
   updateTimer: function() {
+    console.log('update timer');
     var layout = "<span class='minutes'>{mnn}</span>:<span class='seconds'>{snn}</span>";
 
     if (this.model.get('status') == 'start') {
