@@ -7,6 +7,11 @@ Hackerdeck.Views.SidebarView = Backbone.View.extend({
       model: this.model,
       collection: this.collection
     });
+
+    this.controls = new Hackerdeck.Views.SidebarControlsView({
+      model: this.model,
+      collection: this.collection
+    });
   },
 
   getRenderData: function() {},
@@ -19,5 +24,6 @@ Hackerdeck.Views.SidebarView = Backbone.View.extend({
 
   afterRender: function() {
     this.$('#teams-container').html(this.teams.render().el);
+    this.$('#controls-container').html(this.controls.render().el);
   }
 });
