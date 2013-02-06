@@ -16,6 +16,8 @@
 //= require backbone
 //= require hackerdeck
 //= require jquery.countdown.min
+//= require firebase
+//= require backbone-firebase
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
