@@ -26,7 +26,7 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
     // ]);
     window.Hackerdeck.teams = new Hackerdeck.Collections.Teams();
 
-    // this.updateData();
+    this.updateData();
     // setInterval(function() { 
     //   this.updateData()
     // }.bind(this), 10000);
@@ -42,6 +42,6 @@ Hackerdeck.Routers.App = Backbone.Router.extend({
   updateData: function() {
     console.log('updating data');
     window.event_model.fetch();
-    window.Hackerdeck.teams.fetch();
+    //window.Hackerdeck.teams.fetch();
   }
 });
