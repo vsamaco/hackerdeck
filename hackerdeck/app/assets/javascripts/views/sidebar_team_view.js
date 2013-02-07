@@ -7,6 +7,7 @@ Hackerdeck.Views.SidebarTeamView = Backbone.View.extend({
     this.index = this.options.index;
 
     this.model.on('remove', this.remove, this);
+    this.model.on('current', this.setCurrent, this);
   },
 
   getRenderData: function() {
@@ -24,5 +25,9 @@ Hackerdeck.Views.SidebarTeamView = Backbone.View.extend({
 
   afterRender: function() {
 
+  },
+
+  setCurrent: function() {
+    this.$(".badge").addClass('badge-success');
   }
 });
