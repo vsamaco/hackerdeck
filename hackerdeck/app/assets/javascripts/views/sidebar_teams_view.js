@@ -4,7 +4,7 @@ Hackerdeck.Views.SidebarTeamsView = Backbone.View.extend({
 
   initialize: function() {
     this.collection.on('add', this.addTeam, this);
-    //this.model.on('change:current_team', this.setCurrentTeam, this);
+    this.model.on('change:current_team', this.setCurrentTeam, this);
     this.collection.on('add', this.setCurrentTeam, this);
   },
 
